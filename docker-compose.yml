@@ -1,0 +1,11 @@
+version: '3.4'
+
+services:
+  prometheusapi:
+    image: prometheusapi
+    container_name: "PrometheusWebAPI"
+    build:
+      context: ./src
+      dockerfile: Prometheus.WebApi/Dockerfile
+    ports:
+     - $API_PORT:80

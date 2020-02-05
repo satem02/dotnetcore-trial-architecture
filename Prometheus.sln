@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26124.0
+MinimumVisualStudioVersion = 15.0.26124.0
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{1544BC25-0654-4479-957B-2E8F14734121}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prometheus.WebApi", "src\Prometheus.WebApi\Prometheus.WebApi.csproj", "{F2AD66EE-FF46-41C4-BD4D-215576587C7E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{44D416BD-1CC1-447A-B464-69BE89861D34}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi.IntegrationTests", "test\WebApi.IntegrationTests\WebApi.IntegrationTests.csproj", "{06AD0AA6-F178-4F0F-BCF0-E63069079DB3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F2AD66EE-FF46-41C4-BD4D-215576587C7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2AD66EE-FF46-41C4-BD4D-215576587C7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2AD66EE-FF46-41C4-BD4D-215576587C7E}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{F2AD66EE-FF46-41C4-BD4D-215576587C7E}.Debug|x64.Build.0 = Debug|Any CPU
+		{F2AD66EE-FF46-41C4-BD4D-215576587C7E}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F2AD66EE-FF46-41C4-BD4D-215576587C7E}.Debug|x86.Build.0 = Debug|Any CPU
+		{F2AD66EE-FF46-41C4-BD4D-215576587C7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2AD66EE-FF46-41C4-BD4D-215576587C7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2AD66EE-FF46-41C4-BD4D-215576587C7E}.Release|x64.ActiveCfg = Release|Any CPU
+		{F2AD66EE-FF46-41C4-BD4D-215576587C7E}.Release|x64.Build.0 = Release|Any CPU
+		{F2AD66EE-FF46-41C4-BD4D-215576587C7E}.Release|x86.ActiveCfg = Release|Any CPU
+		{F2AD66EE-FF46-41C4-BD4D-215576587C7E}.Release|x86.Build.0 = Release|Any CPU
+		{06AD0AA6-F178-4F0F-BCF0-E63069079DB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06AD0AA6-F178-4F0F-BCF0-E63069079DB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06AD0AA6-F178-4F0F-BCF0-E63069079DB3}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{06AD0AA6-F178-4F0F-BCF0-E63069079DB3}.Debug|x64.Build.0 = Debug|Any CPU
+		{06AD0AA6-F178-4F0F-BCF0-E63069079DB3}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{06AD0AA6-F178-4F0F-BCF0-E63069079DB3}.Debug|x86.Build.0 = Debug|Any CPU
+		{06AD0AA6-F178-4F0F-BCF0-E63069079DB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06AD0AA6-F178-4F0F-BCF0-E63069079DB3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06AD0AA6-F178-4F0F-BCF0-E63069079DB3}.Release|x64.ActiveCfg = Release|Any CPU
+		{06AD0AA6-F178-4F0F-BCF0-E63069079DB3}.Release|x64.Build.0 = Release|Any CPU
+		{06AD0AA6-F178-4F0F-BCF0-E63069079DB3}.Release|x86.ActiveCfg = Release|Any CPU
+		{06AD0AA6-F178-4F0F-BCF0-E63069079DB3}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F2AD66EE-FF46-41C4-BD4D-215576587C7E} = {1544BC25-0654-4479-957B-2E8F14734121}
+		{06AD0AA6-F178-4F0F-BCF0-E63069079DB3} = {44D416BD-1CC1-447A-B464-69BE89861D34}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,28 @@
+image: microsoft/dotnet:sdk
+
+pipelines:
+  default:
+    - step:
+        name: Build Project
+        caches:
+          - dotnetcore
+        script: # Modify the comma`nds below to build your repository.
+          - export PROJECT_NAME=src
+          - dotnet restore src
+          - dotnet build $PROJECT_NAME
+    - step:
+        name: Test Project
+        caches:
+          - dotnetcore
+        script: # Modify the comma`nds below to build your repository.
+          - export TEST_NAME=test
+          - dotnet restore test
+          - dotnet test $TEST_NAME
+    - step:
+        name: Puplish Project
+        deployment: production
+        trigger: manual
+        caches:
+          - dotnetcore
+        script: # Modify the comma`nds below to build your repository.
+          - dotnet help
