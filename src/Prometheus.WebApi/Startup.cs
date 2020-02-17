@@ -12,14 +12,20 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using NSwag;
 using NSwag.Generation.Processors.Security;
+using Prometheus.WebApi.Configurers;
 
 namespace Prometheus.WebApi
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        public Startup(IConfiguration configuration, IWebHostEnvironment env)
         {
-            Configuration = configuration;
+            var builder = new ConfigurationBuilder()
+                .SetBasePath(env.ContentRootPath)
+                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+                .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
+                .AddEnvironmentVariables();
+            Configuration = builder.Build();
         }
 
         public IConfiguration Configuration { get; }
@@ -27,6 +33,8 @@ namespace Prometheus.WebApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            ConfigurerModule.Configure(services,Configuration);
+
             services.AddControllers();
 
             // Customise default API behaviour
@@ -35,20 +43,6 @@ namespace Prometheus.WebApi
                 options.SuppressModelStateInvalidFilter = true;
             });
 
-
-            services.AddOpenApiDocument(configure =>
-            {
-                configure.Title = "Prometheus API";
-                configure.AddSecurity("JWT", Enumerable.Empty<string>(), new OpenApiSecurityScheme
-                {
-                    Type = OpenApiSecuritySchemeType.ApiKey,
-                    Name = "Authorization",
-                    In = OpenApiSecurityApiKeyLocation.Header,
-                    Description = "Type into the textbox: Bearer {your JWT token}."
-                });
-
-                configure.OperationProcessors.Add(new AspNetCoreOperationSecurityScopeProcessor("JWT"));
-            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -64,6 +58,7 @@ namespace Prometheus.WebApi
             app.UseRouting();
 
             app.UseAuthorization();
+            app.UseAuthentication();
 
             app.UseEndpoints(endpoints =>
             {
