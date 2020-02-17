@@ -5,5 +5,7 @@ namespace Prometheus.Core.Models
         public SwaggerInfo SwaggerInfo { get; set; }
 
         public AuthenticationInfo AuthenticationInfo { get; set; }
+
+        public DatabaseInfo ConnectionStrings { get; set; }
     }
 }
